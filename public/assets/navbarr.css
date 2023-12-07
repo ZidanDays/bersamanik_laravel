@@ -1,0 +1,461 @@
+.container-fluid {
+  position: relative; /* Membuat container sebagai kontainer relatif */
+  overflow: hidden; /* Menghilangkan overflow agar gambar tidak keluar dari container */
+}
+
+.navbar-navbar {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  color: white;
+  padding: 5vh !important;
+  transition: top 0.5s ease, background-color 0.5s ease; /* Tambahkan efek transisi */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.navbar-navbar.scrolled {
+  background-color: white;
+  box-shadow: 0 4px 2px -2px gray; /* Optional: Add a subtle shadow */
+}
+
+.logo-nav img {
+  max-width: 100%;
+}
+
+.background-image-atas {
+  width: 100%;
+  height: 100vh; /* 100% dari tinggi viewport */
+  object-fit: cover; /* Membuat gambar mencakup seluruh area */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Letakkan di bawah navbar (z-index lebih rendah dari navbar) */
+}
+
+.logo-nav {
+  font-size: 1.5em;
+  padding-left: 10vh;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  padding-right: 10vh;
+}
+
+.btn-profile-gue {
+  background-color: var(--main-color) !important;
+  color: white;
+  border: none;
+  padding: 10px 32px !important;
+  border: none !important;
+  border-radius: 15px !important;
+  margin-right: 100px;
+  cursor: pointer;
+}
+
+.red-btn {
+  background-color: var(--main-color) !important;
+  color: white;
+  border: none;
+  padding: 8px 40px;
+  border-radius: 15px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.blue-btn {
+  background-color: var(--second-color) !important;
+  color: white;
+  border: none;
+  padding: 8px 40px;
+  border-radius: 15px;
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.menu-btn {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Animasi untuk opacity */
+}
+
+.mobile-menu {
+  display: block;
+  flex-direction: column;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%; /* Sesuaikan lebar menu */
+  background-color: #333;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 2; /* Agar menu muncul di atas overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Animasi untuk opacity */
+}
+
+.mobile-menu a {
+  margin: 10px 0; /* Sesuaikan jarak antara link */
+}
+
+.mobile-menu.show,
+.mobile-menu-overlay.show {
+  display: block; /* Mengubah display menjadi block ketika class "show" ditambahkan */
+  opacity: 1;
+}
+
+/* Custom Styles */
+.container-fluid {
+  width: 100%;
+}
+
+.tinggi {
+  margin-top: 5vh;
+}
+
+.tinggi2 {
+  margin-top: 15vh;
+}
+
+/* Gaya untuk Icon Media Sosial */
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 45px;
+  justify-content: center;
+  margin-bottom: 14vh;
+}
+
+.social-icons i {
+  font-size: 24px;
+  color: var(--main-color);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.social-icons i:hover {
+  font-size: 24px;
+  color: var(--second-color);
+}
+
+/* Mengatur gambar latar belakang */
+.background-image {
+  /* ... kode lainnya ... */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Mengatur konten agar berada di atas gambar */
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.batas {
+  padding-right: 5vh;
+  margin-top: 18vh;
+  padding-left: 10vh;
+}
+
+.tagp {
+  padding-left: 10vh;
+}
+
+.kanan {
+  margin-left: 10px;
+}
+
+.icon-nav {
+  font-size: 35px;
+  background-color: var(--second-color);
+  padding: 5px 5px;
+  border-radius: 5px;
+}
+
+/* RESPONSIVE NAVBAR */
+@media (max-width: 1024px) {
+  .navbar-navbar {
+    padding: 2vh !important;
+  }
+  .menu {
+    padding-right: 4vh;
+  }
+  .blue-btn {
+    margin-right: 30px;
+  }
+  .logo-nav {
+    padding-left: 6vh;
+  }
+  .batas {
+    margin-top: 8vh;
+    padding-left: 9vh;
+    padding-right: 1vh;
+    font-size: 35px;
+  }
+  .tagp {
+    padding-left: 9vh;
+  }
+
+  .btn-profile-gue {
+    font-size: 15px !important;
+    margin-right: 20vh;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-navbar {
+    padding: 2vh !important;
+  }
+  .menu {
+    padding-right: 4vh;
+  }
+  .blue-btn {
+    margin-right: 20px;
+    font-size: 10px;
+    border-radius: 7px;
+  }
+  .red-btn {
+    margin-right: 15px;
+    font-size: 10px;
+    border-radius: 7px;
+  }
+  .logo-nav img {
+    padding-left: 1px;
+    width: 200px !important;
+  }
+  .logo-nav {
+    padding-top: 5px;
+    padding-left: 20px;
+  }
+  .batas {
+    margin-top: 8vh;
+    padding-left: 9vh;
+    padding-right: 1vh;
+    font-size: 25px;
+  }
+  .tagp {
+    padding-left: 9vh;
+  }
+
+  .btn-profile-gue {
+    font-size: 10px !important;
+    margin-right: 20vh;
+    margin-top: 20px;
+    padding: 10px 20px !important;
+  }
+  .social-icons i {
+    font-size: 18px;
+    color: var(--main-color);
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .icon-nav {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 425px) {
+  .navbar-navbar {
+    padding: 2vh !important;
+  }
+  .menu {
+    padding-right: 2vh;
+  }
+  .blue-btn {
+    margin-right: 13px;
+    font-size: 10px;
+    border-radius: 7px;
+    padding: 5px 10px;
+  }
+  .red-btn {
+    margin-right: 10px;
+    font-size: 10px;
+    border-radius: 7px;
+    padding: 5px 10px;
+  }
+  .logo-nav img {
+    padding-left: 1px;
+    width: 120px !important;
+  }
+  .logo-nav {
+    padding-top: 5px;
+    padding-left: 10px;
+  }
+  .batas {
+    padding-left: 1vh;
+    font-size: 20px;
+  }
+  .tagp {
+    padding-left: 1vh;
+  }
+
+  .btn-profile-gue {
+    font-size: 10px !important;
+    padding: 5px 10px !important;
+    border-radius: 6px !important;
+    position: absolute !important;
+    margin-top: 110vh;
+    margin-right: 47vh !important;
+  }
+  .social-icons i {
+    margin-top: 6vh;
+    font-size: 18px;
+    color: var(--main-color);
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .social-icons {
+    margin-right: 30vh;
+  }
+  .icon-nav {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 375px) {
+  .navbar-navbar {
+    padding: 2vh !important;
+  }
+  .menu {
+    padding-right: 2vh;
+  }
+  .blue-btn {
+    margin-right: 13px;
+    font-size: 10px;
+    border-radius: 7px;
+    padding: 5px 10px;
+  }
+  .red-btn {
+    margin-right: 10px;
+    font-size: 10px;
+    border-radius: 7px;
+    padding: 5px 10px;
+  }
+  .logo-nav img {
+    padding-left: 1px;
+    width: 120px !important;
+  }
+  .logo-nav {
+    padding-top: 5px;
+    padding-left: 10px;
+  }
+  .batas {
+    padding-left: 1vh;
+    font-size: 20px;
+  }
+  .tagp {
+    padding-left: 1vh;
+  }
+
+  .btn-profile-gue {
+    font-size: 10px !important;
+    padding: 5px 10px !important;
+    border-radius: 6px !important;
+    position: absolute !important;
+    margin-top: 110vh;
+    margin-right: 39vh !important;
+  }
+  .social-icons i {
+    margin-top: 7vh;
+    font-size: 18px;
+    color: var(--main-color);
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .social-icons {
+    margin-right: 31vh;
+    gap: 30px;
+  }
+  .icon-nav {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 320px) {
+  .navbar-navbar {
+    padding: 1vh !important;
+  }
+  .menu {
+    padding-right: 2vh;
+  }
+  .blue-btn {
+    margin-right: 5px;
+    font-size: 8px;
+    border-radius: 7px;
+    padding: 5px 8px;
+    margin-top: 4px;
+  }
+  .red-btn {
+    margin-right: 5px;
+    font-size: 8px;
+    border-radius: 7px;
+    padding: 5px 8px;
+    margin-top: 4px;
+  }
+  .logo-nav img {
+    padding-left: 1px;
+    width: 100px !important;
+  }
+  .logo-nav {
+    padding-top: 5px;
+    padding-left: 10px;
+  }
+  .batas {
+    padding-left: 1vh;
+    font-size: 15px;
+  }
+  .tagp {
+    padding-left: 1vh;
+    font-size: 10px;
+  }
+
+  .btn-profile-gue {
+    font-size: 8px !important;
+    padding: 5px 10px !important;
+    border-radius: 6px !important;
+    position: absolute !important;
+    margin-top: 92vh;
+    margin-right: 32vh !important;
+  }
+  .social-icons i {
+    margin-top: 3vh;
+    font-size: 18px;
+    color: var(--main-color);
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .social-icons {
+    margin-right: 20vh;
+    gap: 30px;
+  }
+  .icon-nav {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+}
